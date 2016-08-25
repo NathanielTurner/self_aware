@@ -1,0 +1,109 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require jquery-ui/datepicker
+ *= require jquery-ui/button
+ *= require jquery-ui/slider
+ *= require jquery-ui/slider
+ *= require_tree .
+ *= require_self
+ */
+@import 'foundation-icons';
+
+
+
+.main-body{
+  width: 100%;
+}
+
+.the-eye{
+  resize: vertical;
+  overflow: auto;
+  background-color: #9FCAB5;
+  box-shadow: 0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #9FCAB5,0 0 30px #9FCAB5,0 0 40px #9FCAB5,0 0 50px #9FCAB5,0 0 75px #9FCAB5;
+}
+
+.style3 {
+  font-size: 70px;
+  color: #E33100;
+  text-shadow: 0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #E33100,0 0 30px #E33100,0 0 40px #E33100,0 0 50px #E33100,0 0 75px #E33100;
+}
+
+.fi-info {
+  font-size: 160%;
+}
+
+.fi-arrow-right {
+  font-size: 150%;
+  padding-left: 0.5em;
+}
+
+.fi-eye {
+  font-size: 190%;
+  max-width: 20% !important;
+}
+
+.style1 {
+  font-size: 180%;
+  color: #9FCAB5;
+  margin-top: -20px;
+  padding-top: -20px;
+}
+
+.cyan{
+  color: #9FCAB5;
+}
+
+.fourteen{
+  display: inline;
+  max-width: 3.8em;
+}
+
+/* top-bar css */
+@media only screen and (min-width: 40.063em) {
+
+  .logo-wrapper {
+    position: relative;
+  }
+
+  .logo-wrapper .logo {
+    width: 4.5em;
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    top: 1.6em;
+    margin-left: -2.33em;
+  }
+
+  .top-bar-section {
+    margin-top: -20px;
+  }
+
+  .top-bar-section ul.right {
+    width: 50%;
+    padding-left: 60px;
+  }
+
+  .top-bar-section ul.right li {
+    float: left;
+  }
+
+  .top-bar-section ul.left {
+    width: 50%;
+    padding-right: 60px;
+  }
+
+  .top-bar-section ul.left li {
+    float: right;
+  }
+
+}

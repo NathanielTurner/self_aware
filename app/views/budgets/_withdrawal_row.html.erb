@@ -1,0 +1,12 @@
+<div class='each-withdrawal'>
+	<span class='withdrawal-info'>
+		<%= number_to_currency(withdrawal.amount) %> :
+		<%= withdrawal.created_at.strftime('%a %b %e, %l:%M%P, %Y') %>
+	</span>
+	<span class='undo-withdrawal'>
+		<%= link_to withdrawal, method: :delete, remote: true, class: 'delete-task' do %>
+			<i data-tooltip aria-haspopup="true" class="fi-x tip-left" id="task-icon" title="Un-Do"></i>
+		<% end %>
+	</span>
+</div>
+<br>

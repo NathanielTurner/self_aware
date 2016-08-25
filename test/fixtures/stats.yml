@@ -1,0 +1,44 @@
+# Read about fixtures at
+# http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  nightmare_habit_ratio: 1
+  vhard_habit_ratio: 1
+  hard_habit_ratio: 1
+  nomral_habit_ratio: 1
+  easy_habit_ratio: 1
+  nightmare_todo_ratio: 1
+  vhard_todo_ratio: 1
+  hard_todo_ratio: 1
+  normal_todo_ratio: 1
+  easy_todo_ratio: 1
+  best_habit: MyString
+  worst_habit_string: MyString
+  best_todo: MyString
+  worst_todo: MyString
+  monthly_budget_ratio: 1
+  weekly_budget_ratio: 1
+  spent_per_day: 9.99
+  most_spent: 1.5
+
+two:
+  user_id: 1
+  nightmare_habit_ratio: 1
+  vhard_habit_ratio: 1
+  hard_habit_ratio: 1
+  nomral_habit_ratio: 1
+  easy_habit_ratio: 1
+  nightmare_todo_ratio: 1
+  vhard_todo_ratio: 1
+  hard_todo_ratio: 1
+  normal_todo_ratio: 1
+  easy_todo_ratio: 1
+  best_habit: MyString
+  worst_habit_string: MyString
+  best_todo: MyString
+  worst_todo: MyString
+  monthly_budget_ratio: 1
+  weekly_budget_ratio: 1
+  spent_per_day: 9.99
+  most_spent: 1.5

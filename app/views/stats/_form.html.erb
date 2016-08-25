@@ -1,0 +1,29 @@
+<%= simple_form_for(@stat) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :user_id %>
+    <%= f.input :nightmare_habit_ratio %>
+    <%= f.input :vhard_habit_ratio %>
+    <%= f.input :hard_habit_ratio %>
+    <%= f.input :nomral_habit_ratio %>
+    <%= f.input :easy_habit_ratio %>
+    <%= f.input :nightmare_todo_ratio %>
+    <%= f.input :vhard_todo_ratio %>
+    <%= f.input :hard_todo_ratio %>
+    <%= f.input :normal_todo_ratio %>
+    <%= f.input :easy_todo_ratio %>
+    <%= f.input :best_habit %>
+    <%= f.input :worst_habit_string %>
+    <%= f.input :best_todo %>
+    <%= f.input :worst_todo %>
+    <%= f.input :monthly_budget_ratio %>
+    <%= f.input :weekly_budget_ratio %>
+    <%= f.input :spent_per_day %>
+    <%= f.input :most_spent %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

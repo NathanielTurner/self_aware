@@ -1,0 +1,113 @@
+
+<!-- Top-Bar -->
+<div class="contain-to-grid sticky">
+
+  <nav class="top-bar" data-topbar>
+
+    <ul class="title-area">
+      <li class="name">
+          <a data-tooltip aria-haspopup="true" class="show-for-small-only fourteen tip-right" href="/" title="Home">
+              <img src="/assets/The_Eye_50.png" max-width=14%>
+          </a>
+      </li>
+      <li class="toggle-topbar menu-icon">
+        <a href="#"><span>Menu</span></a>
+      </li>
+    </ul>
+
+  <section class="top-bar-section">
+
+  <div class="logo-wrapper hide-for-small-only">
+    <div class="logo">
+      <a data-tooltip aria-haspopup="true" href="/" class="tip-down" title="Home">
+        <img src="/assets/The_Eye_50.png">
+      </a>
+    </div>
+  </div>
+
+  <!-- Right Nav Section -->
+  <ul class="right">
+
+    <li class="has-dropdown">
+      <a href="#" align="center">
+        <i class="fi-graph-trend style1"></i>
+        Stats
+      </a>
+      <ul class="dropdown">
+        <li class="title back js-generated">
+          <h5><a class="parent-link js-generated" href="#">
+                <h2 class="cyan">Stats</h2>
+              </a>
+          </h5>
+          <a href="javascript:void(0)">Back</a>
+        </li>
+        <li class="parent-link show-for-small"></li>
+        <%= render 'layouts/stat_link' %>
+      </ul>
+    </li>
+
+    <li class="has-dropdown">
+      <a href="#" align="center">
+        <i class="fi-torso style1"></i>
+        Account
+      </a>
+      <ul class="dropdown">
+        <li class="title back js-generated">
+          <h5><a class="parent-link js-generated" href="#">
+                <h2 class="cyan">Account</h2>
+              </a>
+          </h5>
+          <a href="javascript:void(0)">Back</a>
+        </li>
+        <li class="parent-link show-for-small"></li>
+        <%= render 'layouts/navigation_links' %>
+      </ul>
+    </li>
+
+  </ul>
+
+  <!-- Left Nav Section -->
+  <ul class="left">
+
+    <li class="has-dropdown">
+      <a href="#" align="center">
+        <i class="fi-list-thumbnails style1"></i>
+        Tasks
+      </a>
+      <ul class="dropdown">
+        <li class="title back js-generated">
+          <h5><a class="parent-link js-generated" href="#">
+                <h2 class="cyan">Tasks</h2>
+              </a>
+          </h5>
+          <a href="javascript:void(0)">Back</a>
+        </li>
+        <li class="parent-link show-for-small"></li>
+        <%= render 'layouts/task_links' %>
+      </ul>
+    </li>
+
+    <li class="has-dropdown">
+      <a href="#" align="center">
+        <i class="fi-dollar style1"></i>
+        Budget
+      </a>
+      <ul class="dropdown">
+        <li class="title back js-generated">
+          <h5><a class="parent-link js-generated" href="#">
+                <h2 class="cyan">Budget</h2>
+              </a>
+          </h5>
+          <a href="javascript:void(0)">Back</a>
+        </li>
+        <li class="parent-link show-for-small"></li>
+        <%= render 'layouts/budget_links' %>
+      </ul>
+    </li>
+  </ul>
+
+  </section>
+  </nav>
+
+</div>
+<!-- Top-Bar -->

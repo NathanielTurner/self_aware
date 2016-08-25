@@ -1,0 +1,99 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @stat.user_id %>
+</p>
+
+<p>
+  <strong>Nightmare habit ratio:</strong>
+  <%= @stat.nightmare_habit_ratio %>
+</p>
+
+<p>
+  <strong>Vhard habit ratio:</strong>
+  <%= @stat.vhard_habit_ratio %>
+</p>
+
+<p>
+  <strong>Hard habit ratio:</strong>
+  <%= @stat.hard_habit_ratio %>
+</p>
+
+<p>
+  <strong>Nomral habit ratio:</strong>
+  <%= @stat.nomral_habit_ratio %>
+</p>
+
+<p>
+  <strong>Easy habit ratio:</strong>
+  <%= @stat.easy_habit_ratio %>
+</p>
+
+<p>
+  <strong>Nightmare todo ratio:</strong>
+  <%= @stat.nightmare_todo_ratio %>
+</p>
+
+<p>
+  <strong>Vhard todo ratio:</strong>
+  <%= @stat.vhard_todo_ratio %>
+</p>
+
+<p>
+  <strong>Hard todo ratio:</strong>
+  <%= @stat.hard_todo_ratio %>
+</p>
+
+<p>
+  <strong>Normal todo ratio:</strong>
+  <%= @stat.normal_todo_ratio %>
+</p>
+
+<p>
+  <strong>Easy todo ratio:</strong>
+  <%= @stat.easy_todo_ratio %>
+</p>
+
+<p>
+  <strong>Best habit:</strong>
+  <%= @stat.best_habit %>
+</p>
+
+<p>
+  <strong>Worst habit string:</strong>
+  <%= @stat.worst_habit_string %>
+</p>
+
+<p>
+  <strong>Best todo:</strong>
+  <%= @stat.best_todo %>
+</p>
+
+<p>
+  <strong>Worst todo:</strong>
+  <%= @stat.worst_todo %>
+</p>
+
+<p>
+  <strong>Monthly budget ratio:</strong>
+  <%= @stat.monthly_budget_ratio %>
+</p>
+
+<p>
+  <strong>Weekly budget ratio:</strong>
+  <%= @stat.weekly_budget_ratio %>
+</p>
+
+<p>
+  <strong>Spent per day:</strong>
+  <%= @stat.spent_per_day %>
+</p>
+
+<p>
+  <strong>Most spent:</strong>
+  <%= @stat.most_spent %>
+</p>
+
+<%= link_to 'Edit', edit_stat_path(@stat) %> |
+<%= link_to 'Back', stats_path %>

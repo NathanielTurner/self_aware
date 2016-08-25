@@ -1,0 +1,60 @@
+
+<% modal ||= false %>
+<% remote = modal ? true : false %>
+
+<%= form_for(@task, remote: remote,
+    html: {role: :form, novalidate: false,
+    :'data-model' => 'task', id: 'new_to_do'}) do |f| %>
+
+  <%= f.hidden_field :completed, value: false %>
+  <%= f.hidden_field :style, value: "to_do" %>
+
+  <div class="field-input">
+    <%= f.label :title do %>
+      <span class="field-label">Title</span>
+    <% end %>
+    <%= f.text_field :title,
+        placeholder: "What to accomplish - Required" %>
+    <div class="error-box"></div>
+  </div>
+
+  <div class="field-input">
+    <%= f.label :description do %>
+      <span class="field-label">Description</span>
+    <% end %>
+    <%= f.text_field :description,
+        placeholder: "More details - Optional" %>
+    <div class="error-box"></div>
+  </div>
+
+  <div class="field-input">
+    <%= f.label :due_date do %>
+      <span class="field-label">Due Date</span>
+    <% end %>
+    <%= f.date_field :due_date, :value => Time.zone.now.strftime('%Y-%m-%d'),
+        id: "datepicker" %>
+    <div class="error-box"></div>
+  </div>
+
+  <div class="field-input" >
+    <%= f.label :difficulty do %>
+      <span class="field-label">Difficulty</span>
+    <% end %>
+    <div class='difficulty-slider'>
+      <div class='difficulty-value'></div>
+      <h6 class='difficulty-name'></h6>
+    </div>
+    <%= f.hidden_field :difficulty %>
+    <div class="error-box"></div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit "Reset", type: "reset",
+                          value: "Reset!",
+                          name: "reset",
+                          class: "small secondary radius button" %>
+
+    <%= f.submit "Save", class: "small secondary radius button" %>
+  </div>
+
+<% end %>

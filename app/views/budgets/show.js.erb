@@ -1,0 +1,10 @@
+$('#balance-partial<%= budget.id %>').html("<%= j render partial: 'balance', locals: { budget: budget } %>");
+$('form#new_withdrawal').find('input[type=reset]').trigger('click');
+<% if notice == 'withdrawal' %>
+	$('.success-box<%= budget.id %>').html("Withdrew <%= number_to_currency(withdrawal.amount) %>");
+<% elsif notice == 'undo' %>
+	$('.success-box<%= budget.id %>').html("Undid a <%= number_to_currency(amount) %> Withdrawal");
+<% end %>
+<% unless defined?(withdrawal) == nil %>
+	$('.for-scrollable').prepend("<%= j render partial: 'withdrawal_row', locals: {withdrawal: withdrawal } %>")
+<% end %>

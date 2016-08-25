@@ -1,0 +1,50 @@
+<fieldset class="for-task">
+  <legend>To-Do Completions</legend>
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Completion Date</th>
+        <th colspan="1"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @to_dos.each do |task| %>
+        <tr>
+          <td><%= task.title %></td>
+          <td><%= task.completed_on.strftime('%b/%m/%Y') %></td>
+          <td>
+            <%= link_to '<i data-tooltip aria-haspopup="true" class="fi-x tip-left" title="Delete"></i>'.html_safe, task, method: :delete, :remote => true, :class => 'delete-task' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</fieldset>
+
+<fieldset class="for-task">
+  <legend>Habit Submissions</legend>
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Submission Total</th>
+        <th colspan="1"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @habits.each do |task| %>
+        <tr>
+          <td><%= task.title %></td>
+          <td><%= task.submits.count %></td>
+          <td>
+            <%= link_to '<i data-tooltip aria-haspopup="true" class="fi-x tip-left" title="Delete"></i>'.html_safe, task, method: :delete, :remote => true, :class => 'delete-task' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</fieldset>

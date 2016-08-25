@@ -1,0 +1,52 @@
+<fieldset class="for-task">
+  <legend>Editing Budget</legend>
+  <%= form_for(@budget) do |f| %>
+  <% if @budget.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@budget.errors.count, "error") %> prohibited this budget from being saved:</h2>
+
+      <ul>
+      <% @budget.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div class="field-input">
+      <%= f.label :name do %>
+        <span class="field-label">Name Your Budget</span>
+      <% end %>
+      <%= f.text_field :name %>
+    </div></br>
+
+    <div class="field-input">
+      <%= f.label :initial_amount do %>
+        <span class="field-label">Add a Balance</span>
+      <% end %>
+      <%= f.number_field :initial_amount %>
+    </div></br>
+
+    <div class="field-input">
+      <%= f.label :weekly_limit do %>
+        <span class="field-label">Weekly</span>
+      <% end %>
+      <%= f.check_box :weekly_limit %>
+    </div></br>
+
+    <div class="field-input">
+      <%= f.label :monthly_limit do %>
+        <span class="field-label">Monthly</span>
+      <% end %>
+      <%= f.check_box :monthly_limit %>
+    </div></br>
+
+    <div class="form-actions">
+      <%= f.submit 'Save', class: "small secondary radius button" %>
+    </div>
+    <% 5.times do |f| %>
+      <p> hey bitch </p>
+    <% end %>
+
+  <% end %>
+</fieldset>

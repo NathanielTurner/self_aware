@@ -1,0 +1,102 @@
+<% unless @visitor == true %>
+
+<fieldset class="daily-report">
+  <legend>Notifications</legend>
+<div class='home-table'>
+  <% if @over_dues.any? %>
+    You have over-due to-dos that have not been submitted.
+    I've placed them at the top of todays list for you.
+    Dont give up! Show me you can finish them.
+  <% end %>
+  <br/>
+  <br/>
+  <% if @at_risks.any? %>
+    <% if @at_risks.count < 2 %>
+      <%= @at_risks.first.name %> is at risk of being overdrawn
+      if current spending habits persist. Steady your
+      spending and its risk will fade.
+    <% else %>
+      Budgets:
+      <% @at_risks.each do |budget| %>
+        <%= budget.name %>,
+      <% end %>
+      are at risk of being overdrawn
+      if current spending habits persist. Steady your
+      spending and their risks will fade.
+    <% end %>
+  <% end %>
+</div>
+</fieldset>
+
+<fieldset class="daily-report">
+  <legend>Daily Report</legend>
+
+</fieldset>
+
+<fieldset class="tasks-for-home">
+  <legend>
+    <i data-tooltip aria-haspopup="true" class="fi-info tip-right" id="task-icon" title="To-Dos listed here are listed according to due-date and difficulty. <br>
+      Easy - 2 days before due.<br/> Normal - 4 days before due.<br/> Hard - 7 days before due.<br/>
+      Very Hard - 12 days before due.<br/> Nightmarish will always show."></i>
+    Sudgested To-Dos To Work On
+    <%= link_to tasks_path do %>
+      <i data-tooltip aria-haspopup="true" class="fi-arrow-right tip-top" id="task-icon" title="To Tasks"></i>
+    <% end %>
+  </legend>
+
+  <div class='home-table'>
+  <table class="list" id="to-do-table">
+    <tbody>
+      <% @to_dos.each do |task| %>
+        <%= render partial: 'tasks/to_do_row', locals: {task: task} %>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+</fieldset>
+
+<fieldset class="budgets-summary">
+  <legend>
+    Budget Progress Summary
+    <%= link_to budgets_path do %>
+      <i data-tooltip aria-haspopup="true" class="fi-arrow-right tip-top" id="task-icon" title="To Budgets"></i>
+    <% end %>
+  </legend>
+  <div class="home-table">
+  <% @budgets.each do |budget| %>
+    <fieldset>
+      <legend><%= budget.name %>
+        <i data-tooltip aria-haspopup="true" class="fi-eye tip-left" id="task-icon" title="Limit:
+          <%= budget.initial_amount %><br/><br>Spent: <%= budget.amount %>
+          <br/><br> Resets: <%= reset_type(budget) %>"></i>
+      </legend>
+      <progress value="<%= budget.percent_complete %>" max="100">
+      </progress>
+      <span><%= budget.percent_complete %>%</span>
+    </fieldset>
+  <% end %>
+  </div>
+</fieldset>
+
+<fieldset class="tasks-for-home">
+  <legend>
+    <i data-tooltip aria-haspopup="true" class="fi-info tip-top" id="task-icon" title="Habits are
+    listed here if they have been set to repeat today.<br/> Once submitted they will not reappear
+    until the next day they are set to repeat."></i>
+    Habits Set To Repeat Today
+    <%= link_to tasks_path do %>
+      <i data-tooltip aria-haspopup="true" class="fi-arrow-right tip-top" id="task-icon" title="To Tasks"></i>
+    <% end %>
+  </legend>
+  <div class='home-table'>
+  <table class="list" id="habit-table">
+    <tbody>
+      <% @habits.each do |task| %>
+        <%= render partial: 'tasks/habit_row', locals: {task: task} %>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+</fieldset>
+
+<% end %>

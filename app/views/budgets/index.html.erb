@@ -1,0 +1,62 @@
+
+<dl class='tabs vertical' data-tab=''><br>
+  <%= link_to 'New budget', budgets_new_path,
+      class: 'tiny button secondary radius'
+  %>
+  <h4> Budgets </h4>
+
+  <% @budgets.each do |budget| %>
+    <span class="limit-type">
+      <% if budget.weekly_limit == true %>
+        <small>Type: Weekly</small>
+      <% else %>
+        <small>Type: Monthly</small>
+      <% end %>
+    </span>
+    <%= link_to edit_budget_path(budget), class: 'budget-pencil' do %>
+      <i data-tooltip aria-haspopup="true" class="fi-pencil tip-top" title="Edit"></i>
+    <% end %>
+    <dd class='budget-tab'>
+
+      <a href='#panel<%=budget.id%>'>
+        <span class="budget-title"><%= budget.name %></span>
+      </a>
+    </dd>
+
+  <% end %>
+
+</dl>
+
+<div class='tabs-content for-budget-tab vertical'>
+
+  <% @budgets.each do |budget| %>
+    <div class='content budget-tab-content' id='panel<%=budget.id%>'>
+
+      <fieldset class='balance'>
+        <legend>Budget Progress</legend>
+        <span  id='balance-partial<%= budget.id %>'>
+          <%= render partial: 'balance', locals: { budget: budget } %>
+        </span>
+      </fieldset><br>
+
+      <fieldset class='withdraw'>
+        <legend>Withdraw</legend>
+        <%= render :partial => 'withdrawal',
+            locals: {budget_id: budget.id} %>
+      </fieldset><br/>
+
+      <div class='all-withdrawals'>
+        <details class='withdraw-details'>
+          <summary id='withdraw-summary'>Show/Hide Withdrawal History</summary>
+            <div class='for-scrollable'>
+              <% budget.withdrawals.order(created_at: :desc).each do |withdrawal| %>
+                <%= render partial: 'withdrawal_row', locals: {withdrawal: withdrawal} %>
+              <% end %>
+          </div>
+        </details>
+      </div>
+
+    </div>
+  <% end %>
+
+</div>

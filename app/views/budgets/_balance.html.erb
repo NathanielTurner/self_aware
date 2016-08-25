@@ -1,0 +1,10 @@
+<span class="budget-reset"><%= budget.time_till_reset %></span>
+<span class="budget-status">Status: <%= budget.status %></span>
+<br>
+<h4>
+	<%= number_to_currency(budget.amount) %> /  <%= number_to_currency(budget.initial_amount) %>
+</h4>
+<progress value="<%= budget.percent_complete %>" max="100">
+</progress>
+<span><%= budget.percent_complete %>%</span>
+</span>

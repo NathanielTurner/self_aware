@@ -1,0 +1,23 @@
+<%= form_for(@withdrawal, url:{ controller: 'budgets', action: 'new_withdrawal'},
+                html:{method:'post', :'data-model' => 'withdrawal'}, remote: true) do |f| %>
+
+  <div class="field-input">
+    <div class="success-box<%= budget_id %>"></div>
+    <%= f.label :amount do %>
+      <span class="field-label">Amount</span>
+    <% end %>
+    <%= f.number_field :amount, placeholder: 'Ex: 10.25', step: 0.01 %>
+    <div class="error-box"></div>
+  </div>
+  <%= f.hidden_field :budget_id, value: budget_id %>
+
+
+  <div class="form-submit">
+    <%= f.submit "Reset", type: "reset",
+                          value: "Reset!",
+                          name: "reset",
+                          class: "tiny secondary radius button" %>
+
+    <%= f.submit 'Confirm', class: "tiny secondary radius button" %>
+  </div>
+<% end %>

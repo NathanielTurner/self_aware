@@ -1,0 +1,62 @@
+
+<table align='center'>
+
+  <tbody>
+    <tr>
+      <td>Habits Submitted on Time</td>
+      <td><%= @submits.where(on_time: true).count %></td>
+    </tr>
+    <tr>
+      <td>To_Dos Completed on Time</td>
+      <td><%= @to_dos.where(completed: true, over_due: false).count %></td>
+    </tr>
+    <tr>
+      <td>Number of Times Habits went Unsubmitted</td>
+      <td><%= @submits.where(on_repeat: false).count %></td>
+    </tr>
+    <tr>
+      <td>Number of To-Dos That became over_due</td>
+      <td><%= @to_dos.where(over_due: true).count %></td>
+    </tr>
+    <tr>
+      <td>Number of Budget Resets Not Over-Drawn</td>
+      <td><%= num_not_over_drawn(@budgets) %></td>
+    </tr>
+    <tr>
+      <td>Number of Number of Budget Resets Over-Drawn</td>
+      <td><%= num_over_drawn(@budgets) %></td>
+    </tr>
+    <tr>
+      <td>Most Successful Habit</td>
+      <td><%= @stat.best_habit %></td>
+    </tr>
+    <tr>
+      <td>Least Successful Habit</td>
+      <td><%= @stat.worst_habit %></td>
+    </tr>
+    <tr>
+      <td>Highest Performing To-Do Difficulty</td>
+      <td><%= @stat.best_to_do_difficulty %></td>
+    </tr>
+    <tr>
+      <td>Lowest Performing To-Do Difficulty</td>
+      <td><%= @stat.worst_to_do_difficulty %></td>
+    </tr>
+    <tr>
+      <td>Highest Performing Habit Difficulty</td>
+      <td><%= @stat.best_habit_difficulty %></td>
+    </tr>
+    <tr>
+      <td>Lowest Performing habit Difficulty</td>
+      <td><%= @stat.worst_habit_difficulty %></td>
+    </tr>
+    <tr>
+      <td>Average Daily Spending</td>
+      <td><%= number_to_currency(@stat.spent_per_day) %></td>
+    </tr>
+    <tr>
+      <td>Greatest Single Withdrawal</td>
+      <td><%= @stat.most_spent %></td>
+    </tr>
+  </tbody>
+</table>

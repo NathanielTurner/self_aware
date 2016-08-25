@@ -1,0 +1,76 @@
+<div class='task-container'>
+<fieldset class="for-task to-left">
+  <legend>
+    <ul class="tabs" data-tab>
+      <li class="tab-title active task-tab"><a id='task-tab' href="#to-dos">To-Dos</a></li>
+      <li class="tab-title task-tab"><a id='task-tab' href="#to-do-history">To-Do History</a></li>
+      <li class="tab-title task-tab">
+        <%= link_to "New To-Do", '#',
+            "data-reveal-id" => "to-do-Modal",
+            id: "task-tab"
+        %>
+      </li>
+    </ul>
+  </legend>
+
+  <div class="tabs-content">
+
+    <div class="content active" id="to-dos">
+      <table class="list" id="to-do-table">
+        <tbody>
+          <% @to_dos.each do |task| %>
+            <%= render partial: 'to_do_row', locals: {task: task} %>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="content" id="to-do-history">
+    </div>
+  </div>
+</fieldset>
+
+<fieldset class="for-task to-right">
+  <legend>
+    <ul class="tabs" data-tab>
+      <li class="tab-title active task-tab"><a id='task-tab' href="#habits">Habits</a></li>
+      <li class="tab-title task-tab"><a id='task-tab' href="#habit-history">Habit History</a></li>
+      <li class="tab-title task-tab">
+        <%= link_to "New Habit", '#',
+            "data-reveal-id" => "habit-Modal",
+            id: "task-tab"
+        %>
+      </li>
+    </ul>
+  </legend>
+
+  <div class="tabs-content">
+
+    <div class="content active" id="habits">
+      <table class="list" id="habit-table">
+        <tbody>
+          <% @habits.each do |task| %>
+            <%= render partial: 'habit_row', locals: {task: task, submits: task.submits.build} %>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="content" id="habit-history">
+    </div>
+  </div>
+</fieldset>
+
+</div>
+<div id="to-do-Modal" class="reveal-modal tiny the-eye" tabindex="-1" data-reveal>
+  <h2 id="modalTitle">To-Do Form.</h2>
+    <%= render 'to_do_form', modal: true %>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+
+<div id="habit-Modal" class="reveal-modal tiny the-eye" data-reveal>
+  <h2 id="modalTitle">Habit Form
+  </h2>
+    <%= render 'habit_form', modal: true %>
+  <a class="close-reveal-modal">&#215;</a>
+</div>

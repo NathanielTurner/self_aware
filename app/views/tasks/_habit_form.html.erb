@@ -1,0 +1,97 @@
+
+<% modal ||= false %>
+<% remote = modal ? true : false %>
+
+<%= form_for(@task, remote: remote,
+    html: {role: :form, novalidate: false,
+    :'data-model' => 'task', id: 'new_habit'}) do |f| %>
+
+    <%= f.hidden_field :completed, value: false %>
+    <%= f.hidden_field :style, value: "habit" %>
+
+    <div class="field-input">
+      <%= f.label :title do %>
+        <span class="field-label">Title</span>
+      <% end %>
+      <%= f.text_field :title,
+          placeholder: "What to accomplish - Required" %>
+      <div class="error-box"></div>
+    </div>
+
+    <div class="field-input">
+      <%= f.label :description do %>
+        <span class="field-label">Description</span>
+      <% end %>
+      <%= f.text_field :description,
+          placeholder: "More details - Optional" %>
+      <div class="error-box"></div>
+    </div>
+
+    Repeat Days - Default: Every Day <br/>
+    <ul class='repeat-buttons'>
+      <li class='repeat-button'>
+        <%= f.label :sunday do %>
+          <span class="field-label">Su</span>
+        <% end %>
+        <%= f.check_box :sunday, {}, false, true %>
+      </li>
+      <li class='repeat-button'>
+        <%= f.label :monday do %>
+          <span class="field-label">Mo</span>
+        <% end %>
+        <%= f.check_box :monday, {}, false, true %>
+      </li>
+      <li class='repeat-button'>
+        <%= f.label :tuesday do %>
+          <span class="field-label">Tu</span>
+        <% end %>
+        <%= f.check_box :tuesday, {}, false, true %>
+      </li>
+      <li class='repeat-button'>
+        <%= f.label :wednesday do %>
+          <span class="field-label">We</span>
+        <% end %>
+        <%= f.check_box :wednesday, {}, false, true %>
+      </li>
+      <li class='repeat-button'>
+        <%= f.label :thursday do %>
+          <span class="field-label">Th</span>
+        <% end %>
+        <%= f.check_box :thursday, {}, false, true %>
+      </li>
+      <li class='repeat-button'>
+        <%= f.label :friday do %>
+          <span class="field-label">Fr</span>
+        <% end %>
+        <%= f.check_box :friday, {}, false, true %>
+      </li>
+      <li class='repeat-button'>
+        <%= f.label :saturday do %>
+          <span class="field-label">Sa</span>
+        <% end %>
+        <%= f.check_box :saturday, {}, false, true %>
+      </li>
+    </ul>
+
+    <div class="field-input" >
+      <%= f.label :difficulty do %>
+        <span class="field-label">Difficulty</span>
+      <% end %>
+      <div class='difficulty-slider'>
+        <div class='difficulty-value'></div>
+        <h6 class='difficulty-name'></h6>
+      </div>
+      <%= f.hidden_field :difficulty %>
+      <div class="error-box"></div>
+    </div>
+
+    <div class="form-actions">
+      <%= f.submit "Reset", type: "reset",
+                            value: "Reset!",
+                            name: "reset",
+                            class: "small secondary radius button" %>
+
+      <%= f.submit "Save", class: "small secondary radius button" %>
+    </div>
+
+  <% end %>

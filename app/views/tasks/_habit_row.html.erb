@@ -1,0 +1,45 @@
+<tr class="list">
+
+  <td class="habit-finish tip-left" data-tooltip aria-haspopup="true" title="Submit This Habit">
+    <%= form_for(task) do |f| %>
+
+      <%= f.label :submitted do %>
+        <a href="#"><i class="fi-check"></i></a>
+      <% end %>
+
+      <%= f.hidden_field :submitted, value: true %>
+      <%= f.hidden_field :home_page, value: false %>
+      <%= f.fields_for :submits do |ff| %>
+        <% today = submit_day_name.to_sym %>
+
+
+        <% if task.read_attribute(today) == true %>
+          <%= ff.hidden_field :on_repeat, value: true %>
+          <%= ff.hidden_field :on_time, value: true %>
+        <% else %>
+          <%= ff.hidden_field :on_repeat, value: false %>
+          <%= ff.hidden_field :week_day, value: submit_day_name %>
+        <% end %>
+      <% end %>
+      <div class="habit-submit">
+        <%= f.submit %>
+      </div>
+    <% end %>
+  </td>
+
+  <td class="habit-title"><%= task.title %></td>
+  <td class="submit-marker"><%= task.submitted %></td>
+  <td class="habit-performance"><%= "Performance: #{task.performance}" %></td>
+  <td class="habit-button">
+    <%= link_to edit_task_path(task) do %>
+      <i data-tooltip aria-haspopup="true" class="fi-pencil tip-left" id="task-icon" title="Edit"></i>
+    <% end %>
+    <%= link_to task, method: :delete, remote: true, class: 'delete-task' do %>
+      <i data-tooltip aria-haspopup="true" class="fi-x tip-left" id="task-icon" title="Delete"></i>
+    <% end %>
+    <i data-tooltip aria-haspopup="true" class="fi-eye tip-right radius" id="task-icon" title="Description: <br/><%= task.description %><br/><br/>
+       Repeats: <br/><%= get_days_true(task) %><br/><br/> Difficulty:<br/>
+       <%= get_difficulty(task.difficulty) %>"></i>
+  </td >
+
+</tr>

@@ -1,0 +1,10 @@
+
+<% if @task.style == "to_do" %>
+  $('#to-do-table').prepend("<%= j render partial: 'to_do_row', locals: {task: @task } %>");
+  $('#to-do-Modal').modal_success();
+  toDoFinishLoad();
+<% elsif @task.style == "habit" %>
+  $('#habit-table').prepend("<%= j render partial: 'habit_row', locals: {task: @task } %>");
+  $('#habit-Modal').modal_success();
+  habitFinishLoad();
+<% end %>

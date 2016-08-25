@@ -1,0 +1,38 @@
+<tr class="list">
+
+  <td class="to-do-finish tip-left" data-tooltip aria-haspopup="true" title="Complete This Task">
+    <%= form_for(task)  do |f| %>
+      <%= f.label :completed do %>
+        <a href="#"><i class="fi-check"></i></a>
+      <% end %>
+      <%= f.hidden_field :completed, value: true %>
+      <%= f.hidden_field :completed_on, value: Time.zone.today.strftime('%Y-%m-%d') %>
+      <%= f.hidden_field :home_page, value: false %>
+      <div class="task-complete">
+        <%= f.submit %>
+      </div>
+    <% end %>
+  </td>
+
+  <td class="to-do-title"><%= task.title %></td>
+  <td class="to-do-date">
+    <% if task.over_due == false %>
+      Due <%= days_till(task.due_date) %>
+    <% else %>
+      Over Due by<br/> <%= days_from(task.due_date) %> Days
+    <% end %>
+  </td>
+
+  <td class="to-do-button">
+    <%= link_to edit_task_path(task) do %>
+      <i data-tooltip aria-haspopup="true" class="fi-pencil tip-left" id="task-icon" title="Edit"></i>
+    <% end %>
+    <%= link_to task, method: :delete, remote: true, class: 'delete-task' do %>
+      <i data-tooltip aria-haspopup="true" class="fi-x tip-right" id="task-icon" title="Delete"></i>
+    <% end %>
+    <i data-tooltip aria-haspopup="true" class="fi-eye tip-right" id="task-icon" title="Description: <br/><%= task.description %><br/><br/>
+       Due Date: <br/><%= task.due_date.strftime("%b/%-d/%Y")%><br/><br/> Difficulty:<br/>
+       <%= get_difficulty(task.difficulty) %>"></i>
+  </td>
+
+</tr>

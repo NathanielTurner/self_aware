@@ -1,0 +1,114 @@
+// Place all the styles related to the budgets controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#withdraw-summary:hover{
+  color: #3789E6;
+  cursor: pointer;
+}
+
+.all-withdrawals {
+  width: 60% !important;
+  align: center;
+  display: inline-block;
+}
+
+.each-withdrawal {
+  border-style: ridge;
+  border-color: #D3D3D3;
+  border-width: thin;
+  width: 100%;
+}
+
+.withdrawal-info {
+  float: left;
+}
+
+.undo-withdrawal {
+  float: right;
+}
+
+.for-scrollable {
+  height: 30%;
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+#withdraw-summary {
+  margin-bottom: 1em;
+  display: inline;
+  align: center;
+
+}
+
+.limit-type{
+  float: left;
+  margin: 0.1em;
+}
+
+.budget-reset{
+  float: left;
+}
+
+.budget-status{
+  float: right;
+}
+
+.budget-pencil{
+  float: right;
+  margin: .1em !important;
+  padding: .1em !important;
+}
+
+.budget-title{
+  display: inline-block;
+}
+
+.tabs dd.active a {
+  background-color: #9FCAB5 !important;
+}
+
+dd.budget-tab{
+	padding-bottom: .2em;
+}
+
+
+@media screen and (min-width: 40.063em) {
+  .for-budget-tab > .content.active {
+  	width: 72%;
+  }
+
+  fieldset.balance{
+  	margin-top: 0;
+  	padding-bottom: 0;
+  	width: 70%;
+  	display: inline-table;
+  }
+
+  fieldset.withdraw{
+  	margin-top: 0;
+  	padding-bottom: 0;
+  	width: 45%;
+  	display: inline-table;
+  }
+}
+
+@media screen and (max-width: 40.062em) {
+  .for-budget-tab > .content.active {
+    width: 100%;
+  }
+
+  fieldset.balance{
+    margin-top: 0;
+    padding-bottom: 0;
+    width: 100%;
+    display: inline-table;
+  }
+
+  fieldset.withdraw{
+    margin-top: 0;
+    padding-bottom: 0;
+    width: 100%;
+    display: inline-table;
+  }
+}

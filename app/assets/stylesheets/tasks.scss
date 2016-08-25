@@ -1,0 +1,279 @@
+// Place all the styles related to the tasks controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.submit-marker{
+  display: none;
+}
+
+#task-tab {
+  padding: 0.5em;
+  margin-right: 0.5em;
+}
+
+#habits {
+  height: 90%;
+  overflow: auto;
+}
+
+#to-dos {
+  height: 90%;
+  overflow: auto;
+}
+
+#to-do-history {
+  height: 90%;
+  overflow: auto;
+}
+
+#habit-history {
+  height: 90%;
+  overflow: auto;
+}
+
+.tabs li.active a {
+  background-color: #9FCAB5 !important;
+}
+
+.repeat-buttons{
+  list-style-type: none;
+  display: inline-block;
+}
+
+.repeat-buttons-edit{
+  list-style-type: none;
+  display: inline-flex;
+}
+
+.repeat-button{
+  display: inline;
+  padding-bottom: .1em;
+}
+
+.adv-cont{
+  background-color: #9FCAB5 !important;
+  padding-top: 0 !important;
+}
+
+.difficulty-name{
+  margin-left: 1em;
+  float: left;
+}
+
+.difficulty-value{
+  width: 50% !important;
+  margin-top: .4em;
+  margin-bottom: .4em;
+  float: left;
+}
+
+.grayed{
+  background: #A9A9A9 !important;
+}
+
+.field-errors{
+  width: 95%;
+  border: red;
+  border-width: thin;
+  border-style: solid;
+}
+
+td.to-do-finish {
+  border-right: gray;
+  border-right-width: thin;
+  border-right-style: solid;
+  width: 10%;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+td.habit-finish {
+  border-right: gray;
+  border-right-width: thin;
+  border-right-style: solid;
+  width: 10%;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+td.to-do-title{
+  width: 40%;
+  margin: auto;
+}
+
+td.habit-title{
+  width: 45%;
+  margin: auto;
+}
+
+td.to-do-date{
+  width: 35%;
+  margin: auto;
+  padding-right: 0 !important;
+}
+
+td.habit-performance{
+  width: 25%;
+  margin: auto;
+}
+
+td.to-do-button{
+  width: 15%;
+  margin: auto;
+  padding-left: 0 !important;
+  display: inline;
+  text-align: center;
+}
+
+i#task-icon{
+  padding-right: .4em;
+}
+
+td.habit-button{
+  width: 20%;
+  margin: auto;
+  display: inline;
+  text-align: center;
+}
+
+input[type="checkbox"] + label{
+  margin-bottom: 0.2em;
+  margin-left: 0.1em;
+  margin-right: 0.1em;
+  display: flex;
+}
+
+table.list {
+  border: none;
+  margin-bottom: 0;
+  align: center;
+}
+
+tr.list {
+  border-radius: 0.2em;
+  border-spacing: 0px;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+  margin-bottom: .5em;
+  border: solid gray;
+  border-width: 1px 1px;
+}
+/* Hides complete task button for checkbox icon checkbox coverup */
+.task-complete{
+  display: none;
+  margin: auto;
+  vertical-align: middle;
+}
+
+.habit-submit{
+  display: none;
+  margin: auto;
+  vertical-align: middle;
+}
+
+.hide-this {
+  display: none;
+}
+/* button and icon css */
+
+.ui-button{
+  width: 3em;
+}
+
+.ui-button-text-only .ui-button-text {
+	padding: .4em 0.5em;
+}
+
+a.small.secondary.radius.button.dropdown{
+  margin-bottom: 1em;
+}
+
+.button {
+  margin-bottom: 1em;
+}
+
+a:link {
+  color: #333333;
+}
+a:visited {
+  color: #333333;
+}
+a:hover {
+  color: #333333;
+  background-color: transparent;
+}
+a:active {
+  color: #333333;
+}
+
+.tooltip{
+  margin-right: 5em;
+  margin-left: 0;
+}
+
+.task-container{
+  width: 77%;
+  align: center !important;
+  display: inline-block;
+}
+
+fieldset.for-task {
+  width: 50%;
+  height: 85%;
+  display: inline-block;
+}
+
+fieldset.to-left{
+  float: left;
+}
+
+fieldset.to-right{
+  float: right;
+}
+
+fieldset.tasks-for-home {
+  width: 35%;
+  float: left;
+  position: relative !important;
+  height: 50% !important;
+}
+
+
+fieldset.budgets-summary{
+  position: relative !important;
+  height: 50% !important;
+  float: left;
+  width: 30%;
+}
+
+fieldset.daily-report{
+  height: 25%;
+  width: 50%;
+  float: left;
+}
+
+.home-table{
+  height: 99%;
+  overflow: auto !important;
+}
+
+.task-table{
+  height: 100%;
+  overflow: auto !important;
+}
+
+@media only screen and (max-width: 40em) {
+  fieldset.for-task {
+    width: 100%;
+    display: inline-table;
+  }
+}
+
+.vcard{
+  width: 30em;
+}
+
+.f-dropdown li{
+  display: inline-block;
+}
